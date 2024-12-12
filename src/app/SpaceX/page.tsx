@@ -98,7 +98,6 @@ interface RocketData {
     
     return (
         <div>
-            <Appheader></Appheader>
             <div className='text-blue-500 font-extrabold text-2xl py-5'>SpaceX Rocket Data</div>
             <Table dataSource={Rockets} columns={columns} rowKey="name"></Table>
         </div>
