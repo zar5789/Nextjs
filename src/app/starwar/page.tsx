@@ -1,7 +1,7 @@
 import { Table } from "antd";
 import { GraphQLClient } from "graphql-request";
 import Link from "next/link";
-import Appheader from "../Components/AppHeader";
+import Appheader from "../../Components/AppHeader";
 
 interface FilmData {
   title: string;

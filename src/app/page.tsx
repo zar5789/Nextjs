@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "antd";
-import Appheader from "./Components/AppHeader";
-import { SideBar } from "./Components/SideBar";
+import Appheader from "../Components/AppHeader";
+import { SideBar } from "../Components/SideBar";
 
-export default function Home() {
+export default function Home(){
   return (
     <div>
       <div className="container mx-auto mt-5 " style={{ width: "50%" }}>
