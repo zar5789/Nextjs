@@ -1,24 +1,32 @@
-"use client"
+"use client";
 import { Table } from "antd";
-import Appheader from "../../Components/AppHeader";
-import { getRockets, RocketData } from "@/lib/getRockets";
+import { getRockets, RocketData } from "@/serveractions/getRockets";
 import { useEffect, useState } from "react";
 
-
 export default function RocketList() {
-  const [rockets, setRockets] =  useState<RocketData[]>([])
+  const [rockets, setRockets] = useState<RocketData[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  const setData = async ()=>{
-    const data = await getRockets()
-    setRockets(data)
-  }
-  
-  useEffect(()=>{
-    setData()
-  },[])
+  const setData = async () => {
+    try {
+      const data = await getRockets();
 
-  
+      if (data) {
+        console.log("Data received:", data);
+        setRockets(data);
+      } else {
+        console.error("No data received.");
+      }
+    } catch (error) {
+      console.error("Error fetching rocket data:", error);
+    } finally {
+      setLoading(false); // Step 3: Set loading to false after fetching or error
+    }
+  };
 
+  useEffect(() => {
+    setData();
+  }, []);
 
   // const rockets = await getRockets()
 
@@ -50,13 +58,13 @@ export default function RocketList() {
     },
     {
       title: "Mass (kg)",
-      dataIndex: "mass",
       key: "mass",
+      render: (record: RocketData) => <span>{record.mass?.kg || "N/A"}</span>,
     },
     {
       title: "Height (m)",
-      dataIndex: "height",
       key: "height",
+      render: (record: RocketData) => <span>{record.height?.meters || "N/A"}</span>,
     },
   ];
 
@@ -65,7 +73,11 @@ export default function RocketList() {
       <div className="text-blue-500 font-extrabold text-2xl py-5">
         SpaceX Rocket Data
       </div>
-      <Table dataSource={rockets} columns={columns} rowKey="name"></Table>
+      {loading ? (
+        <div className="flex justify-center items-center py-10">Loading...</div>
+      ) : (
+        <Table dataSource={rockets} columns={columns} rowKey="name"></Table>
+      )}
     </div>
   );
-};
+}
