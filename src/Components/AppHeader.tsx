@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Appheader = () => {
   return (
@@ -9,6 +10,7 @@ const Appheader = () => {
           <img src="./next.svg" alt="logo" width={100} height={100} />
         </Link>
       </div>
+      <div><LanguageSwitcher></LanguageSwitcher></div>
       <div>
         <img
 

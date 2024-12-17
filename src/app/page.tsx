@@ -1,19 +1,19 @@
-
+"use client";
 import Link from "next/link";
 import { Button } from "antd";
 import Appheader from "../Components/AppHeader";
-
-export default function Home(){
+import { useTranslation } from "react-i18next";
+export default function Home() {
+  const { t } = useTranslation();
   return (
     <div>
       <Appheader></Appheader>
       <div>
-      
         <div>
           <div className="container mx-auto mt-5 " style={{ width: "50%" }}>
             <div className="p-10 space-y-8 border-2 rounded-lg shadow-md">
               <h1 className="text-lime-500 font-extrabold text-2xl">
-                Next JS. Demo for Testing
+                {t("home.title")}
               </h1>
               <p className="italic font-serif text-sm">
                 The button below will navigate you to the page that display the
