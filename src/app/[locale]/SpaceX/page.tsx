@@ -1,6 +1,7 @@
 
-import Appheader from "../../Components/AppHeader";
+import Appheader from "@/Components/AppHeader";
 import RocketList from "@/Components/RocketList";
+
 
 async function SpaceX() {
   return (

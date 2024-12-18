@@ -1,18 +1,23 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { usePathname } from "@/i18n/routing";
+import { redirect } from "@/i18n/routing";
 
-export default function LanguageSwitcher() {
-  const { i18n } = useTranslation();
+const LocaleSwitcher = () => {
+  const pathname = usePathname(); // Get current pathname
 
-  const handleLanguageChange = (lang: string) => {
-    i18n.changeLanguage(lang); // Change language programmatically
+  const pathAfterLocale = pathname?.split("/").slice(2).join("/") || "";
+  // Function to handle language change
+  const handleLocaleChange = (locale: string) => {
+    redirect({ href: `/${pathAfterLocale}`, locale: `${locale}` });
   };
 
   return (
     <div>
-      <button onClick={() => handleLanguageChange("en")}>English</button> /
-      <button onClick={() => handleLanguageChange("th")}>ไทย</button>
+      <button onClick={() => handleLocaleChange("en")}>English</button> /
+      <button onClick={() => handleLocaleChange("th")}>ไทย</button>
     </div>
   );
-}
+};
+
+export default LocaleSwitcher;

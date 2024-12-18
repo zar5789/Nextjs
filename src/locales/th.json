@@ -6,6 +6,8 @@
     "starwar": "Starwar",
     "notice": "ฉันสังเกตว่าเมื่อเปลี่ยนหน้าโดยการคลิกปุ่ม จะทำให้หน้าโหลดใหม่ ดังนั้นฉันจึงสร้างลิงก์แยกไว้ด้านล่าง",
     "linkSpaceX": "SpaceX สร้างด้วย Link",
-    "linkStarwar": "Starwar สร้างด้วย Link"
+    "linkStarwar": "Starwar สร้างด้วย Link",
+    "spacexData": "โคตรพ่อโคตรเม่จรวด SpaceX",
+    "starwarData": "ไปดูหนังกับพี่มั้ยน้อง"
   }
 }

@@ -6,6 +6,8 @@
     "starwar": "Starwar",
     "notice": "I notice that navigating with a button reloads the page, so I also created a separate link below.",
     "linkSpaceX": "SpaceX created with Link",
-    "linkStarwar": "Starwar created with Link"
+    "linkStarwar": "Starwar created with Link",
+    "spacexData": "SpaceX Rocket Data",
+    "starwarData": "Starwar Films Data"
   }
 }

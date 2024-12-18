@@ -2,10 +2,11 @@
 import { Table } from "antd";
 import { getRockets, RocketData } from "@/serveractions/getRockets";
 import { useEffect, useState } from "react";
-
+import { useTranslations } from "next-intl";
 export default function RocketList() {
   const [rockets, setRockets] = useState<RocketData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const t = useTranslations("home");
 
   const setData = async () => {
     try {
@@ -71,7 +72,7 @@ export default function RocketList() {
   return (
     <div>
       <div className="text-blue-500 font-extrabold text-2xl py-5">
-        SpaceX Rocket Data
+        {t("spacexData")}
       </div>
       {loading ? (
         <div className="flex justify-center items-center py-10">Loading...</div>
