@@ -2,12 +2,13 @@
 import { Table } from "antd";
 import { getMovies, FileDataRes, SpeciesConnection } from "@/serveractions/getMovies";
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function MovieList() {
     const [movie, setMovie] = useState<FileDataRes[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const t = useTranslations("home");
+    const locale = useLocale();
 
     const setData = async () => {
         try {
@@ -60,7 +61,7 @@ export default function MovieList() {
     return (
       <div>
         <div className="text-blue-500 font-extrabold text-2xl py-5">
-          {t("starwarData")}
+          {t("starwarData")} {locale}
         </div>
         {loading ? (
           <div className="flex justify-center items-center py-10">

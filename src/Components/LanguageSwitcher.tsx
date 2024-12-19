@@ -15,7 +15,8 @@ const LocaleSwitcher = () => {
   return (
     <div>
       <button onClick={() => handleLocaleChange("en")}>English</button> /
-      <button onClick={() => handleLocaleChange("th")}>ไทย</button>
+      <button onClick={() => handleLocaleChange("th")}>ไทย</button> /
+      <button onClick={() => handleLocaleChange("jp")}>日本</button>
     </div>
   );
 };

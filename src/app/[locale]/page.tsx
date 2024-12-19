@@ -1,15 +1,18 @@
 "use client";
 import { Button } from "antd";
 import Appheader from "@/Components/AppHeader";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 
 export default function Home() {
   const t = useTranslations("home");
+  const tcommon = useTranslations("common");
+  const locale = useLocale(); // Get the current locale
   return (
     <div>
       <Appheader></Appheader>
       <div>
+        <div>Your current locale is: {locale}</div>
         <div>
           <div className="container mx-auto mt-5 " style={{ width: "50%" }}>
             <div className="p-10 space-y-8 border-2 rounded-lg shadow-md">
@@ -44,10 +47,10 @@ export default function Home() {
             <p className="italic font-serif text-sm">{t("notice")}</p>
             <nav className="flex justify-evenly pt-5 w-full">
               <Link href="/SpaceX" className=" text-blue-500">
-                {t("linkSpaceX")}
+                {tcommon("linkSpaceX")}
               </Link>
               <Link href="/starwar" className=" text-blue-500">
-                {t("linkStarwar")}
+                {tcommon("linkStarwar")}
               </Link>
             </nav>
           </div>

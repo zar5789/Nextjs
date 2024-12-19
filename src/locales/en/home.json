@@ -1,0 +1,11 @@
+{
+  "title": "Welcome to our homepage",
+  "description": "This is a description of the homepage",
+  "spaceX": "SpaceX",
+  "starwar": "Star Wars",
+  "notice": "I noticed that changing pages by clicking the button would reload the page, so I created a separate link below.",
+  "linkSpaceX": "Visit SpaceX",
+  "linkStarwar": "Visit Star Wars",
+  "spacexData": "SpaceX Rocket Data",
+  "starwarData": "Starwar Films Data"
+}

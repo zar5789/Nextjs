@@ -8,7 +8,8 @@ export default async function middleware(req: NextRequest) {
   // ถ้าไม่มี locale ใน URL (เช่น `/`, `/about` หรือเส้นทางอื่น ๆ ที่ไม่ได้ระบุ locale)
   if (
     !req.nextUrl.pathname.startsWith("/en") &&
-    !req.nextUrl.pathname.startsWith("/th")
+    !req.nextUrl.pathname.startsWith("/th") &&
+    !req.nextUrl.pathname.startsWith("/jp")
   ) {
     // ทำการ redirect ไปที่ /en โดยอัตโนมัติ
     return NextResponse.redirect(
@@ -20,5 +21,5 @@ export default async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/(th|en)/:path*"],
+  matcher: ["/", "/(th|en|jp)/:path*"],
 };
